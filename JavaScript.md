@@ -1,15 +1,19 @@
+# 함수는 일급객체이다.
+
+
 # this
 - this는 함수 내에서 함수의 호출 맥락을 의미한다. 
-  * (this는 함수가 소속된 객체를 가르킨다. / 객체 소속 메소드에 this는 그 객체를 가르킨다.)
+  * this는 함수가 소속된 객체를 가르킨다. / 객체 소속 메소드에 this는 그 객체를 가르킨다.
 - 전역 실행 맥락(context)에서 this는 전역 객체를 참조.
 - 함수 내부에서 비엄격(strict)모드일 때는 전역 객체 참조
 - 엄격(strict)모드일 때는 전역 객체가 기본 바인딩 대상에서 제외된다. 그래서 this는 undefined가 된다.
 - this는 실제 함수 호출 시점에서 바인딩 되며 함수 호출 방법에 따라 결정
 
-
-
 ## 화살표 함수
 화살표 함수에서 this는 자신을 감싼 정적 범위입니다.
+
+
+
 
 # 객체 지향 프로그래밍(Object Oriented Programming)
 - 프로그래밍에서 필요한 데이터를 추상화시켜 상태와 행위를 가진 객체를 만들고 그 객체들 간의 유기적인 상호작용을 통해 로직을 구성하는 프로그래밍 방법
@@ -131,6 +135,32 @@ getter도 마찬가지로 굳이 예를들자면 자료에 무언가 더하거�
 - 문장(if, switch, for)을 사용하는 것은 함수형 프로그래밍이 아니다.
 - 함수를 변수에 할당하거나, 함수에 인자로 전달하거나 리턴하는 등의 first class(일급함수) 특징과 함주 자체를 인자로 전달하거나 함수에서 또 다른 함수를 리턴하는 higher-order function(고차함수) 이 두가지 속성을 가져야 한다.
 
+# 객체
+{ } 중괄호로 객체를 생성. 객체에 담겨 있는 변수는 프로퍼티라고 하고, 객체에 담겨 있는 함수를 매소드라고 한다.
+
+
 # 생성자
+생성자는 객체를 만드는 함수. new를 붙여서 만든다.
+(객체에 대한 초기화)
+```js
+function person() {}
+var a = new person();
+```
+
 
 # prototype
+프로토타입 체인
+```js
+function Ultra(){}
+Ultra.prototype.ultraProp = true;
+
+function Super(){}
+Super.prototype = new Ultra();
+
+function Sub(){}
+Sub.prototype = new Super();
+
+var a = new Sub();
+
+console.log(a.ultraProp)
+```
