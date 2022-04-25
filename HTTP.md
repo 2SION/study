@@ -97,8 +97,8 @@ HTTP 메시지 전송
   ```
 6. 응답 패킷 전달 -> 웹 브라우저에 도착
 
-# HTTP 
-## 기본
+# HTTP 기본
+## 모든것이 HTTP
 * HyperText Transfer Protocol
 * HTTP 메시지에 모든 것을 전송
   - HTML, TEXT
@@ -157,3 +157,17 @@ Stateful, Stateless
   * 웹 브라우저로 사이트를 요청하면 HTML과 더불어 자바스크립트, css, 추가 이미지 등 수 많은 자원이 함께 다운로드
   * 지금은 HTTP 지속 연결(Persistent Connections)로 문제 해결
   * HTTP/2, HTTP/3에서 더 많은 최적화
+
+
+
+# HTTP 메세지
+1. 요청 메세지
+  - 메소드 + 패스 + HTTP버전 (시작라인)
+  - 호스트
+2. 응답 메세지
+  - HTTP버전 + 상태값
+3. HTTP 메시지 구조
+  - 시작 라인
+  - 헤더
+  - 공백라인(CRLF)
+  - 메시지 바디
